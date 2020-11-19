@@ -9,16 +9,15 @@ import 'kepler_const_key.dart';
 class FlutterKepler {
   static const MethodChannel _channel = const MethodChannel('flutter_kepler');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-
-// 初始化
-  static Future<ResultModel> initKepler(
-      {@required String appKey, @required String appSecret}) async {
-    Map result = await _channel
-        .invokeMethod("initKepler", {"appKey": appKey, "appSecret": appSecret});
+  /// 初始化
+  static Future<ResultModel> initKepler({
+    @required String appKey,
+    @required String appSecret,
+  }) async {
+    Map result = await _channel.invokeMethod(
+      "initKepler",
+      {"appKey": appKey, "appSecret": appSecret},
+    );
     return ResultModel(
       result[KeplerConstKey.errorCode],
       result[KeplerConstKey.errorMessage],
@@ -32,9 +31,11 @@ class FlutterKepler {
   /// 禁止传参带入以下符号：   =#%&+?<{}
   ///
   ///
-  static keplerPageWithURL({@required String url, Map userInfo}) {
-    _channel
-        .invokeMethod("keplerPageWithURL", {"url": url, "userInfo": userInfo});
+  static Future<void> keplerPageWithURL({@required String url, Map userInfo}) {
+    return _channel.invokeMethod(
+      "keplerPageWithURL",
+      {"url": url, "userInfo": userInfo},
+    );
   }
 
   ///
@@ -43,8 +44,11 @@ class FlutterKepler {
   /// 禁止传参带入以下符号：   =#%&+?<{}
   ///
   ///
-  static keplerNavigationPage({Map userInfo}) {
-    _channel.invokeMethod("keplerNavigationPage", {"userInfo": userInfo});
+  static Future<void> keplerNavigationPage({Map userInfo}) {
+    return _channel.invokeMethod(
+      "keplerNavigationPage",
+      {"userInfo": userInfo},
+    );
   }
 
   ///
@@ -54,9 +58,14 @@ class FlutterKepler {
   /// 禁止传参带入以下符号：   =#%&+?<{}
   ///
   ///
-  static keplerOpenItemDetailWithSKU({@required String sku, Map userInfo}) {
-    _channel.invokeMethod(
-        "keplerOpenItemDetailWithSKU", {"sku": sku, "userInfo": userInfo});
+  static Future<void> keplerOpenItemDetailWithSKU({
+    @required String sku,
+    Map<String, dynamic> userInfo,
+  }) {
+    return _channel.invokeMethod(
+      "keplerOpenItemDetailWithSKU",
+      {"sku": sku, "userInfo": userInfo},
+    );
   }
 
   ///
@@ -65,8 +74,8 @@ class FlutterKepler {
   /// 禁止传参带入以下符号：   =#%&+?<{}
   ///
   ///
-  static keplerOpenOrderList({Map userInfo}) {
-    _channel.invokeMethod("keplerOpenOrderList", {"userInfo": userInfo});
+  static Future<void> keplerOpenOrderList({Map<String, dynamic> userInfo}) {
+    return _channel.invokeMethod("keplerOpenOrderList", {"userInfo": userInfo});
   }
 
   ///
@@ -76,9 +85,14 @@ class FlutterKepler {
   /// 禁止传参带入以下符号：   =#%&+?<{}
   ///
   ///
-  static keplerOpenSearchResult({@required String searchKey, Map userInfo}) {
-    _channel.invokeMethod("keplerOpenSearchResult",
-        {"searchKey": searchKey, "userInfo": userInfo});
+  static Future<void> keplerOpenSearchResult({
+    @required String searchKey,
+    Map<String, dynamic> userInfo,
+  }) {
+    return _channel.invokeMethod(
+      "keplerOpenSearchResult",
+      {"searchKey": searchKey, "userInfo": userInfo},
+    );
   }
 
   ///
@@ -87,8 +101,9 @@ class FlutterKepler {
   /// 禁止传参带入以下符号：   =#%&+?<{}
   ///
   ///
-  static keplerOpenShoppingCart({Map userInfo}) {
-    _channel.invokeMethod("keplerOpenShoppingCart", {"userInfo": userInfo});
+  static Future<void> keplerOpenShoppingCart({Map userInfo}) {
+    return _channel
+        .invokeMethod("keplerOpenShoppingCart", {"userInfo": userInfo});
   }
 
   ///
@@ -97,10 +112,14 @@ class FlutterKepler {
   /// @param number 添加到购物车中商品数量,默认1件
   ///
   ///
-  static Future<ResultModel> keplerAddToCartWithSku(
-      {@required String sku, String number = "1"}) async {
-    Map result = await _channel
-        .invokeMethod("keplerAddToCartWithSku", {"sku": sku, "num": number});
+  static Future<ResultModel> keplerAddToCartWithSku({
+    @required String sku,
+    String number = "1",
+  }) async {
+    Map result = await _channel.invokeMethod(
+      "keplerAddToCartWithSku",
+      {"sku": sku, "num": number},
+    );
     return ResultModel(
       result[KeplerConstKey.errorCode],
       result[KeplerConstKey.errorMessage],
@@ -120,8 +139,10 @@ class FlutterKepler {
     @required String skuID,
     @required String refer,
   }) async {
-    Map result = await _channel.invokeMethod("keplerFastPurchase",
-        {"unionID": unionID, "appID": appID, "skuID": skuID, "refer": refer});
+    Map result = await _channel.invokeMethod(
+      "keplerFastPurchase",
+      {"unionID": unionID, "appID": appID, "skuID": skuID, "refer": refer},
+    );
     return ResultModel(
       result[KeplerConstKey.errorCode],
       result[KeplerConstKey.errorMessage],
@@ -135,7 +156,7 @@ class FlutterKepler {
 
   /// 登录授权
   static Future<ResultModel> keplerLogin() async {
-    Map result = await _channel.invokeMethod("keplerLogin");
+    Map<String, dynamic> result = await _channel.invokeMethod("keplerLogin");
     return ResultModel(
       result[KeplerConstKey.errorCode],
       result[KeplerConstKey.errorMessage],
@@ -143,10 +164,8 @@ class FlutterKepler {
   }
 
   //取消授权并且清除登录态
-  static keplerCancelAuth() {
-    _channel.invokeMethod(
-      "keplerCancelAuth",
-    );
+  static Future<void> keplerCancelAuth() {
+    return _channel.invokeMethod("keplerCancelAuth");
   }
 
 // // 设置进度条颜色,16进制
@@ -156,7 +175,7 @@ class FlutterKepler {
 //     _channel.invokeMethod("setKeplerProgressBarColor", {"color": color});
 //   }
 
-// 判断当前是否已经登录授权
+  /// 判断当前是否已经登录授权
   static Future<ResultModel> keplerIsLogin() async {
     Map result = await _channel.invokeMethod("keplerIsLogin");
     return ResultModel(
@@ -167,9 +186,10 @@ class FlutterKepler {
 
   /// 是否强制使用H5打开界面 默认为true;
   /// 设置为false时,调用商品详情页,订单列表,购物车等方法时将跳转到京东app并打开对应的界面
-  static setKeplerOpenByH5({
-    @required bool isOpenByH5,
-  }) {
-    _channel.invokeMethod("setKeplerOpenByH5", {"isOpenByH5": isOpenByH5});
+  static Future<void> setKeplerOpenByH5(isOpenByH5) {
+    return _channel.invokeMethod(
+      "setKeplerOpenByH5",
+      {"isOpenByH5": isOpenByH5},
+    );
   }
 }

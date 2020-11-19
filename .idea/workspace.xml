@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34df4629-8b21-4df6-a1a2-a8e21933bd12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_kepler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_kepler.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/flutter_kepler_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/flutter_kepler_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +21,29 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="366" />
-    <option name="y" value="23" />
-    <option name="width" value="1216" />
-    <option name="height" value="737" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1605789425" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1605789424" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectId" id="1kVcod3HFJjdf3vy1FK7Aa33doD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -54,17 +75,35 @@
       <option name="presentableId" value="Default" />
       <updated>1605789375443</updated>
     </task>
+    <task id="LOCAL-00001" summary="chore: 清理">
+      <created>1605789421118</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605789421118</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="chore: 清理" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 清理" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="262" y="56" key="CommitChangelistDialog2" timestamp="1605789420699">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="262" y="56" key="CommitChangelistDialog2/0.25.1440.875/-229.-1055.1920.1055@0.25.1440.875" timestamp="1605789420699" />
     <state x="229" y="98" key="SettingsEditor" timestamp="1605789404350">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="229" y="98" key="SettingsEditor/0.25.1440.875/-229.-1055.1920.1055@0.25.1440.875" timestamp="1605789404350" />
+    <state x="495" y="-909" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605789835632">
+      <screen x="-229" y="-1055" width="1920" height="1055" />
+    </state>
+    <state x="495" y="-909" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.25.1440.875/-229.-1055.1920.1055@-229.-1055.1920.1055" timestamp="1605789835632" />
   </component>
 </project>
